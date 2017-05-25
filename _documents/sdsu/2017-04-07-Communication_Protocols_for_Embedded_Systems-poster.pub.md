@@ -1,28 +1,12 @@
 ---
 document:
-  date: 2017-05-22
+  date: 2017-04-07
   name: "Communication_Protocols_for_Embedded_Systems-poster.pub"
   ext: pub
+file:
+  path: "/documents/2017/04/07/Communication_Protocols_for_Embedded_Systems-poster.pub"
+categories:
+  sdsu
+  ee491
+class_id: ee491
 ---
-
-<h3>{{ page.document.name }}</h3>
-
-<h4>Table</h4>
-
-<table style="width:100%" border="1px solid black">
-    <tr> 
-        <th>name</th>
-        <th>date</th>
-        <th>ext</th>
-    </tr>
-    <tr> 
-        <td>{{ page.document.name }}</td>
-        <td>{{ page.document.date }}</td>
-        <td>{{ page.document.ext }}</td>
-    </tr>
-</table>
-
-<h4>Ruby Object</h4>
-```
-{{ page.document }}
-```
