@@ -3,6 +3,8 @@
 
 # Index of /documents/
 
+## documents
+
 <table style="width:100%" border="1px solid black">
     <tr> 
         <th>path</th>
@@ -16,24 +18,22 @@
 {% endfor %}
 </table>
 
-## documents
-
-{% for d in site.documents %}
-### {{ d.document.name }}
-#### document
-{% include table_from_document.html document=d %}
-#### document.document
-{% include table_from_dict.html dict=d.document %}
-#### document.file
-{% assign sf = site.static_files | where: "path", d.file.path | first %}
-{% include table_from_static_file.html sf=sf %}
-{% endfor %}
-
 ## files
+
 {% assign files = site.static_files | where_exp: "file", "file.path contains '/documents/'"%}
+
+<table style="width:100%" border="1px solid black">
+    <tr> 
+        <th>path</th>
+        <th>last_modified</th>
+    </tr>
 {% for sf in files %}
-{% include table_from_static_file.html sf=sf %}
+    <tr> 
+        <td><a href="{{ sf.path }}">{{ sf.path }}</a></td>
+        <td>{{ sf.modified_time }}</td>
+    </tr>
 {% endfor %}
+</table>
 
 
 
